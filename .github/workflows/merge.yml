@@ -1,7 +1,7 @@
 name: Merge actions
 
 env:
-  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-debian:10-master-132813612
+  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-debian:10-master-236878594
   BST_FORCE_SESSION_REBUILD: 1
 
 on:

@@ -34,7 +34,7 @@ on:
 # - standardize WSL tasks by using GitHub-provided runners
 
 env:
-  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-177137613
+  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-236878594
   PYTEST_ARGS: --color=yes --integration
 
 jobs:
@@ -44,8 +44,8 @@ jobs:
 
     env:
       CI_IMAGE_PREFIX: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite
-      CI_IMAGE_SUFFIX: master-177137613
-      TOXENV: py36,py37,py38-nocover,py36-plugins,py37-plugins,py38-plugins-nocover
+      CI_IMAGE_SUFFIX: master-236878594
+      TOXENV: py36,py37,py38-nocover,py39-nocover,py36-plugins,py37-plugins,py38-plugins-nocover,py39-plugins-nocover
       # FIXME: De-duplicate against tox.ini
       BST_PLUGINS_EXPERIMENTAL_VERSION: 1.93.4
 
@@ -57,8 +57,8 @@ jobs:
         # the base for running tests.
         test-name:
           - debian:10
-          - fedora:31
           - fedora:32
+          - fedora:33
           - ubuntu:18.04
           - centos:7.7.1908
 
@@ -126,7 +126,7 @@ jobs:
 
   tests-fedora-missing-deps:
     runs-on: ubuntu-20.04
-    container: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-177137613
+    container: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-236878594
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
@@ -149,7 +149,7 @@ jobs:
 
   mypy:
     runs-on: ubuntu-20.04
-    container: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-177137613
+    container: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-236878594
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
@@ -161,7 +161,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-20.04
-    container: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-177137613
+    container: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-236878594
     steps:
       - name: Check out repository
         uses: actions/checkout@v2

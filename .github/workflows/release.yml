@@ -1,7 +1,7 @@
 name: Upload Release Asset
 
 env:
-  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-177137613
+  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-fedora:32-master-236878594
   BST_FORCE_SESSION_REBUILD: 1
 
 on:
