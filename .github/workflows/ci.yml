@@ -8,7 +8,7 @@ name: PR Checks
 on: push
 
 env:
-  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-debian:10-master-132813612
+  CI_IMAGE: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite-debian:10-master-236878594
   PYTEST_ARGS: --color=yes --integration
 
 jobs:
@@ -18,8 +18,8 @@ jobs:
 
     env:
       CI_IMAGE_PREFIX: registry.gitlab.com/buildstream/buildstream-docker-images/testsuite
-      CI_IMAGE_SUFFIX: master-132813612
-      TOXENV: py35,py36,py37,py38-nocover
+      CI_IMAGE_SUFFIX: master-236878594
+      TOXENV: py35,py36,py37,py38-nocover,py39
 
     strategy:
       fail-fast: false
@@ -29,8 +29,7 @@ jobs:
         # the base for running tests.
         test-name:
           - debian:10
-          - fedora:30
-          - fedora:31
+          - fedora:33
           - ubuntu:18.04
 
     steps:
